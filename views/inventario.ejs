@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventario de Tecnologias </title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="header-bar">
+        <h2>Gestión de Hardware y Componentes</h2>
+        <div>
+            <a href="/catalogo" style="color: white; background-color: #28a745; padding: 8px 15px; border-radius: 4px; text-decoration: none; margin-right: 15px;">Ver Catálogo</a>
+            <a href="/logout" style="color: #dc3545; font-weight: bold; text-decoration: none;">Cerrar Sesión</a>
+        </div>
+    </div>
+
+    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <h3 style="margin-top: 0;">Ingresar Nuevo Insumo</h3>
+        <form action="/productos" method="POST" style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <input type="text" name="nombre" placeholder="Ej: Monitor AOC Envision 24'' / Ryzen 7 5700G" required style="flex: 2; margin: 0;">
+            
+            <select name="categoria" required style="flex: 1; margin: 0;">
+                <option value="">Seleccione Categoría...</option>
+                <option value="Componentes PC">Componentes PC</option>
+                <option value="Monitores">Monitores</option>
+                <option value="Consolas">Consolas</option>
+                <option value="Periféricos">Periféricos</option>
+            </select>
+
+
+            <input type="url" name="imagen_url" placeholder="https://www.reuse.cl/cdn/shop/files/sony-ps4-estandar-500gb-negro-reacondicionado-3310292.png?v=1756244352&width=1000" required style="flex: 2; margin: 0;">
+            <input type="number" name="precio" placeholder="Precio ($)" required style="flex: 1; margin: 0;">
+            <button type="submit" style="flex: 1; margin: 0;">Guardar producto nuevo </button>
+        </form>
+    </div>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Equipo/Componente</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+        
+        <% productos.forEach(function(p) { %>
+            <tr>
+                <td><%= p.id %></td>
+                <td><%= p.nombre %></td>
+                <td><strong><%= p.categoria %></strong></td>
+                <td>$<%= p.precio %></td>
+                <td>
+                    <form action="/productos/eliminar/<%= p.id %>" method="POST" style="margin: 0;">
+                        <button type="submit" class="btn-peligro">Eliminar Producto </button>
+                    </form>
+                </td>
+            </tr>
+        <% }); %>
+    </table>
+
+    <% if (alerta) { %>
+        <script>alert('<%= alerta %>');</script>
+    <% } %>
+</body>
+</html>

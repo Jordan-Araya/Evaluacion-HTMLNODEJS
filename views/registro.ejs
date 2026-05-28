@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro Tech</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="contenedor-centro">
+        <h2>Crear Cuenta</h2>
+        <form action="/api/registro" method="POST">
+            <input type="text" name="user" placeholder="Nuevo Usuario" required>
+            <input type="password" name="pass" placeholder="Crear Clave" required>
+            <button type="submit">Registrarme</button>
+        </form>
+        <br>
+        <a href="/" style="text-decoration: none; color: #0056b3;">Volver al Login</a>
+    </div>
+
+    <% if (alerta) { %>
+        <script>alert('<%= alerta %>');</script>
+    <% } %>
+</body>
+</html>
