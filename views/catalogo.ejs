@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catálogo de Componentes</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="header-bar" style="background: #222; color: white; padding: 15px 30px; margin: -20px -20px 20px -20px; display: flex; justify-content: space-between; align-items: center;">
+        <h2 style="margin: 0;">Catálogo de Hardware</h2>
+        
+        <% if (estaLogueado) { %>
+            <a href="/productos" style="color: #28a745; text-decoration: none; font-weight: bold;">[ Volver a Gestión ]</a>
+        <% } else { %>
+            <a href="/" style="color: #4da6ff; text-decoration: none; font-weight: bold;">[ Ingresar al Sistema ]</a>
+        <% } %>
+    </div>
+
+    <div class="grid-catalogo">
+        <% productos.forEach(function(p) { %>
+            <div class="tarjeta-producto">
+                <img src="<%= p.imagen_url %>" alt="<%= p.nombre %>">
+                <div class="info">
+                    <span class="badge"><%= p.categoria %></span>
+                    <h3><%= p.nombre %></h3>
+                    <p class="precio">$<%= p.precio %></p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>

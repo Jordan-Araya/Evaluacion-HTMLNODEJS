@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tecnologias Tech </title>
+    <link rel="stylesheet" href="/styles.css"> </head>
+<body>
+    <div class="contenedor-centro">
+        <h2>Bienvenido a Sistemas TECH </h2>
+        <form action="/api/login" method="POST">
+            <input type="text" name="user" placeholder="Usuario" required>
+            <input type="password" name="pass" placeholder="Clave" required>
+            <button type="submit">Iniciar</button>
+        </form>
+        <br>
+        <a href="/registro" style="text-decoration: none; color: #0056b3;"> Registrarse </a>
+    </div>
+
+    <br><br>
+        <hr style="border: 0.5px solid #ddd; margin-bottom: 15px;">
+        <a href="/catalogo" style="background-color: #28a745; color: white; padding: 10px; text-decoration: none; border-radius: 4px; display: block;">Ver Catálogo de Productos</a>
+
+    <% if (alerta) { %>
+        <script>alert('<%= alerta %>');</script>
+    <% } %>
+</body>
+</html>
