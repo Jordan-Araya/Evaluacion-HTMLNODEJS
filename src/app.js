@@ -59,6 +59,7 @@ app.get('/logout', (req, res) => {
     res.redirect('/?alerta=Sesión cerrada');
 });
 
+
 app.get('/catalogo', async (req, res) => {
     try {
         const productos = await dbService.obtenerInventario();
