@@ -13,10 +13,10 @@
         </div>
     </div>
 
-    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+    <div style="background: rgba(255, 143, 190, 0.568); padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
         <h3 style="margin-top: 0;">Ingresar Nuevo Insumo</h3>
         <form action="/productos" method="POST" style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <input type="text" name="nombre" placeholder="Ej: Monitor AOC Envision 24'' / Ryzen 7 5700G" required style="flex: 2; margin: 0;">
+            <input type="text" name="nombre" placeholder="Monitor AOC Envision 24" required style="flex: 2; margin: 0;">
             
             <select name="categoria" required style="flex: 1; margin: 0;">
                 <option value="">Seleccione Categoría...</option>
@@ -27,8 +27,8 @@
             </select>
 
 
-            <input type="url" name="imagen_url" placeholder="https://www.reuse.cl/cdn/shop/files/sony-ps4-estandar-500gb-negro-reacondicionado-3310292.png?v=1756244352&width=1000" required style="flex: 2; margin: 0;">
-            <input type="number" name="precio" placeholder="Precio ($)" required style="flex: 1; margin: 0;">
+            <input type="url" name="imagen_url" placeholder="URL DE LA FOTO" required style="flex: 2; margin: 0;">
+            <input type="number" name="precio" placeholder="Precio$" required style="flex: 1; margin: 0;">
             <button type="submit" style="flex: 1; margin: 0;">Guardar producto nuevo </button>
         </form>
     </div>
